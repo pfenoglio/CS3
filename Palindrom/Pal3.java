@@ -8,7 +8,10 @@ wowwow1
 
 output
 
-
+21
+5
+6
+1
 
 
 
