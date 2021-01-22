@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+public class Permutations
+{
+	public static void main(String[] args) throws FileNotFoundException
+	{
+		Scanner s = new Scanner(new File("permutations.dat"));
+		s.nextLine();
+		while(s.hasNextLine())
+		{
+			String t = s.nextLine();
+			System.out.println(m(t));
+		}
+		s.close();
+	}
+	public static int m(String i)
+	{
+		if(i.length()<2)
+			return i.length();
+		else
+		{
+			int a = 0;
+			String r = "";
+			for(int j = 0; j < i.length(); j++)
+				if(!r.contains(String.valueOf(i.charAt(j))))
+				{
+					a += m(i.substring(0,j).concat(i.substring(j+1,i.length())));
+					r += i.charAt(j);
+				}
+			return a;
+		}
+	}
+}
